@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 70%;
+    margin: 30px auto;
+    padding: 30px;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(161, 243, 243);
+}
+
+h1{
+    text-align: center;
+    font-family: fantasy;
+    color: blueviolet;
+}
+label{
+    font-family: fantasy;
+    color: blueviolet;
+    font-size: 20px;
+}
+input[type="text"], textarea{
+    background-color: rgb(208, 203, 203);
+}
+
+#b{
+    text-align: center;
+    padding: 20px;  
+}
+
+#p{
+    text-align: center;
+    padding: 20px;
+    font-family: fantasy;
+    color: blueviolet;
+    font-size: 20px;
+}
+table{
+    padding: 20px;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(161, 243, 243);
+    height: 80%;
+}
+tbody{
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(161, 243, 243);
+    padding: 20px;
+}
+td{
+    font-family:fantasy;
+    color: blue;
+    font-size: 20px;
+    padding: 10px;
+}
+.allorders {
+    width: 40%;
+}
+

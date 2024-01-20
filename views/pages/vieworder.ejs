@@ -1,0 +1,72 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+<h1>View Receipt</h1>
+
+<p><a class="link-primary" href="/">Home</a></p>
+
+
+        <table class="table table-hover table-bordered">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td><%= order.fullname %></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><%= order.email %></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><%= order.phone %></td>
+                </tr>
+                <td>Delivery Address</td>
+                    <td>
+                        <%= order.address %>,
+                        <%= order.city %>,
+                        <%= order.postalCode %>,
+                        <%= order.province %>
+                    </td>
+                    <tr>
+                        <td>Products</td>
+                        <td>
+                            <% if (order.productOneQuantity > 0) { %>
+                                Air Force One (Qty: <%= order.productOneQuantity %>) @  $<%= (order.productOnePrice) %> = $<%= (order.productOneTotal).toFixed(2) %><br>
+                              <% } %>
+                              <% if (order.productTwoQuantity > 0) { %>
+                                Air Jordan (Qty: <%= order.productTwoQuantity %>) @  $<%= (order.productTwoPrice) %> = $<%= (order.productTwoTotal).toFixed(2) %><br>
+                              <% } %>
+                              <% if (order.productThreeQuantity > 0) { %>
+                                Converse (Qty: <%= order.productThreeQuantity %>) @  $<%= (order.productThreePrice) %> = $<%= (order.productThreeTotal).toFixed(2) %><br>
+                              <% } %>
+                        </td>
+                      </tr>
+                <tr>
+                    <td>Shipping Charges</td>
+                    <td>$<%= order.shippingCharge.toFixed(2) %></td>
+                </tr>
+                <tr>
+                    <td>Subtotal</td>
+                    <td>$<%= order.subtotal.toFixed(2) %></td>
+                </tr>
+                <tr>
+                    <td>Tax (GST) @ <%= (order.taxRate) %>%</td>
+                    <td>
+                      $<%= order.taxAmount.toFixed(2) %>
+                    </td>
+                  </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$<%= order.total.toFixed(2) %></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <%- include("../shared/footer") %>
+
+    </div>
+
+    <%- include("../shared/scripts") %>
+</body>

@@ -1,0 +1,34 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>MyShop</h1>
+
+        <p><a class="link-primary" role="button" href="/orders">View Orders</a></p>
+
+        <% if (typeof errors !== "undefined") { for (let error of errors) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span><%= error.msg %></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        <% } } %>
+
+        <form method="post" action="/edit/<%= order._id %>">
+            <div class="mb-3">
+                <label class="form-label" for="fullname">Name</label>
+                <input class="form-control" type="text" name="fullname" value="<%= order.fullname %>" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="email">Email Address</label>
+                <input class="form-control" type="text" name="email" value="<%= order.email %>" />
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Save" />
+        </form>
+
+        <%- include("../shared/footer") %>
+    </div>
+
+    <%- include("../shared/scripts") %>
+</body>

@@ -1,0 +1,104 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+<h1>My Shop</h1>
+
+<p><a class="link-primary" href="/orders">View Customers</a></p>
+
+
+<% if (typeof errors !== "undefined") { for (let error of errors) { %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <span><p><%= error.msg %></p> </span>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } }%>
+<form method="post" action="/">
+
+    <div class="mb-3">
+        <label class="form-label" for="fullname">Name</label>
+        <input class="form-control" type="text" name="fullname"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" type="text" name="email" placeholder="email@email.com"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="phone">Contact Number</label>
+        <input class="form-control" type="text" name="phone" placeholder="xxx-xxx-xxxx"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="address">Address</label>
+        <input class="form-control" type="text" name="address" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="postalCode">Postal Code</label>
+        <input class="form-control" type="text" name="postalCode" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="city">City</label>
+        <input class="form-control" type="text" name="city" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="province">Province</label>
+        <select class="form-select" name="province">
+          <option value="" selected disabled>Select a Province</option>
+          <option value="AB">Alberta</option>
+          <option value="BC">British Columbia</option>
+          <option value="MB">Manitoba</option>
+          <option value="NB">New Brunswick</option>
+          <option value="NL">Newfoundland and Labrador</option>
+          <option value="NS">Nova Scotia</option>
+          <option value="NT">Northwest Territories</option>
+          <option value="NU">Nunavut</option>
+          <option value="ON">Ontario</option>
+          <option value="PE">Prince Edward Island</option>
+          <option value="QC">Quebec</option>
+          <option value="SK">Saskatchewan</option>
+          <option value="YT">Yukon</option>
+        </select>
+      </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="productOne">Air Force One @ 8</label>
+        <input class="form-control" type="text" name="productOne"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="productTwo">Air Jordan @ 5</label>
+        <input class="form-control" type="text" name="productTwo"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="productThree">Converse @ 11</label>
+        <input class="form-control" type="text" name="productThree"/>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="delivery">Delivery Time</label>
+        <select class="form-select" name="delivery">
+          <option value="" selected disabled>Select Delivery Time</option>
+          <option value="1">1 day @ 10</option>
+          <option value="2">2 days @ 8</option>
+          <option value="3">3 days @ 6</option>
+          <option value="4">4 days @ 4</option>
+          <option value="5">5 days @ 2</option>
+          <option value="6">Free</option>
+        </select>
+      </div>
+
+      <div id="b">
+        <input class="btn btn-primary" type="submit" value="Place Order" />
+      </div>
+</form>
+        <%- include("../shared/footer") %>
+
+    </div>
+
+    <%- include("../shared/scripts") %>
+</body>

@@ -1,0 +1,35 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+
+        <p><a class="link-primary" href="/">Home</a></p>
+
+        <% if (typeof errors !== "undefined") { for (let error of errors) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span><%= error.msg %></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        <% } } %>
+
+        <form method="post" action="/login">
+            <div class="mb-3">
+                <label class="form-label" for="username">Username</label>
+                <input class="form-control" type="text" name="username" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="text" name="password" />
+            </div>
+            <div id="b">
+                <input class="btn btn-primary" type="submit" value="Place Order" />
+              </div>
+        </form>
+
+        <%- include("../shared/footer") %>
+    </div>
+
+    <%- include("../shared/scripts") %>
+</body>
